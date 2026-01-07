@@ -42,7 +42,7 @@ int main(){
         r++;
 
     } while (r < MovimentoRainha);
-    printf("\n");
+    printf("\n\n");
     
 
     return 0;
