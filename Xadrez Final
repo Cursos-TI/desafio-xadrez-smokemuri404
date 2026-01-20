@@ -1,8 +1,8 @@
 #include <stdio.h>
 
-// =====================
+
 // RECURSIVIDADE
-// =====================
+
 
 // Torre - vertical
 void torrevertical(int casas) {
