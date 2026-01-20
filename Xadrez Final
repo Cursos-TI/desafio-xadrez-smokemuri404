@@ -1,0 +1,87 @@
+#include <stdio.h>
+
+// =====================
+// RECURSIVIDADE
+// =====================
+
+// Torre - vertical
+void torrevertical(int casas) {
+    if (casas <= 0)
+        return;
+
+    printf("Cima\n");
+    torrevertical(casas - 1);
+}
+
+// Torre - horizontal
+void torrehorizontal(int casas) {
+    if (casas <= 0)
+        return;
+
+    printf("Direita\n");
+    torrehorizontal(casas - 1);
+}
+
+// Rainha
+void moverrrainha(int casas) {
+    if (casas <= 0)
+        return;
+
+    printf("Cima\n");
+    printf("Direita\n");
+
+    moverrrainha(casas - 1);
+}
+
+// Bispo (recursão + loops)
+void moverbispo(int casas) {
+    if (casas <= 0)
+        return;
+
+    // Loop externo (vertical)
+    for (int i = 0; i < 1; i++) {
+        printf("Cima\n");
+
+        // Loop interno (horizontal)
+        for (int j = 0; j < 1; j++) {
+            printf("Direita\n");
+        }
+    }
+
+    moverbispo(casas - 1);
+}
+
+// Cavalo - movimento em L
+void movercavalo() {
+    for (int i = 0; i < 3; i++) {
+        if (i < 2) {
+            printf("Cima\n");
+            continue;
+        }
+
+        if (i == 2) {
+            printf("Direita\n");
+            break;
+        }
+    }
+}
+
+int main() {
+
+    int casas = 3;
+
+        printf("==TORRE==\n");
+    torrehorizontal(casas);
+    torrevertical(casas);
+
+    printf("\n== BISPO ==\n");
+    moverbispo(casas);
+
+    printf("\n== RAINHA ==\n");
+    moverrrainha(casas);
+
+    printf("\n== CAVALO ==\n");
+    movercavalo();
+
+    return 0;
+}
